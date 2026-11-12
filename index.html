@@ -47,9 +47,10 @@ a{color:#03054F}a:hover{color:#2B2F8F}
 .go-reviews{scroll-margin-top:calc(var(--hh) - 12px)}
 .go-app{scroll-margin-top:calc(var(--hh) - 16px)}
 .about-text p{font-size:16px;line-height:1.6}
-@media (max-width:1180px){:root{--hh:98px}.hdr-in{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"logo right" "nav nav";padding:10px 20px 4px;gap:4px 16px}.hdr-logo{grid-area:logo;font-size:34px}.hdr-right{grid-area:right;gap:14px}.hdr-nav{grid-area:nav;overflow-x:auto;gap:22px;padding-bottom:8px;scrollbar-width:none}}
+@media (max-width:1180px){:root{--hh:98px}.hdr-in{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"logo right" "nav nav";padding:10px 20px 4px;gap:4px 16px}.hdr-logo{grid-area:logo;font-size:34px}.hdr-right{grid-area:right;gap:14px}.hdr-nav{grid-area:nav;flex-wrap:wrap;white-space:normal;gap:4px 22px;padding-bottom:8px}}
+@media (max-width:560px){:root{--hh:122px}.hdr-nav{gap:2px 18px;font-size:14px}}
 @media (max-width:420px){.hdr-logo{font-size:24px}.hdr-right{gap:10px}.hdr-langs{gap:8px!important}.hdr-cta{padding:8px 14px!important;font-size:14px!important}}
-@media (max-width:760px){.about{grid-template-columns:minmax(0,1fr)}.about-text{justify-self:start}.trip{grid-template-columns:minmax(0,1fr);max-width:340px;margin:0 auto;padding-bottom:0}.trip-mid{margin-top:0}}
+@media (max-width:760px){.about{grid-template-columns:minmax(0,1fr)}.about-text{justify-self:start}.trip{grid-template-columns:minmax(0,1fr);max-width:340px;margin:0 auto;padding-bottom:0}.trip-mid{margin-top:0}.hero-ph{height:auto!important;min-height:0!important;width:100%!important;max-width:420px!important;margin:0 auto!important;justify-self:center!important}}
 </style>
 <style>
 html{scroll-behavior:smooth}
@@ -98,7 +99,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <a href="#book" style="border: 1.5px solid #03054F; color: #03054F; text-decoration: none; padding: 13px 24px; border-radius: 14px; font-weight: 500">Читать книгу</a>
 </div>
 </div>
-<div data-nosnippet="" style="height: min(540px, calc(100vh - var(--hh) - 64px)); min-height: 380px; aspect-ratio: 4 / 5; max-width: 100%; justify-self: end; margin-right: 36px; border-radius: 28px; border: 2px dashed #8A7FA3; background: #E8E1D7; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; padding: 24px; box-sizing: border-box; color: #5A3F70">
+<div class="hero-ph" data-nosnippet="" style="height: min(540px, calc(100vh - var(--hh) - 64px)); min-height: 380px; aspect-ratio: 4 / 5; max-width: 100%; justify-self: end; margin-right: 36px; border-radius: 28px; border: 2px dashed #8A7FA3; background: #E8E1D7; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; padding: 24px; box-sizing: border-box; color: #5A3F70">
 <span style="font-weight: 600; font-size: 17px">Hero — цветное фото</span>
 <span style="font-size: 14px; max-width: 300px">Картахена, естественный свет, спокойная архитектура, благородная цветокоррекция</span>
 </div>
@@ -392,6 +393,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 </div>
 </dialog>
 <script>
+(function(){var h=document.querySelector('.hdr');function f(){if(h){document.documentElement.style.setProperty('--hh',h.offsetHeight+'px');}}f();window.addEventListener('resize',f);if(document.fonts&&document.fonts.ready){document.fonts.ready.then(f);}})();
 document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.getAttribute('data-open'));if(d&&d.showModal){d.showModal();}});});
 document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d){d.close();}});});
 </script>
