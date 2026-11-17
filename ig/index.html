@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Lead your Dream</title>
+<style>body{margin:0;background:#F2ECE2;color:#03054F;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}a{color:#03054F}</style>
+<script>
+(function(){
+  var L=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']).map(function(x){return String(x).toLowerCase().slice(0,2);});
+  var p='/en/';
+  for(var i=0;i<L.length;i++){ var c=L[i];
+    if(c==='ru'||c==='uk'||c==='be'||c==='kk'){p='/';break;}
+    if(c==='es'){p='/es/';break;}
+    if(c){p='/en/';break;} }
+  location.replace(p+'?utm_source=instagram&utm_medium=bio');
+})();
+</script></head>
+<body><noscript><p><a href="/?utm_source=instagram&amp;utm_medium=bio">leadyourdream.net</a></p></noscript></body></html>

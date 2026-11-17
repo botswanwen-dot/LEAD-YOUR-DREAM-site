@@ -399,5 +399,33 @@ document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener(
 (function(){var pv=document.getElementById('dlg-photo');if(!pv)return;var im=pv.querySelector('img');document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){var t=b.querySelector('img');im.src=b.getAttribute('data-full');im.alt=t.alt;pv.showModal();});});im.addEventListener('click',function(){pv.close();});})();
 document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d){d.close();}});});
 </script>
+<style>
+.lb{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#03054F;color:#F2ECE2;font-size:15px;line-height:1.4;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(3,5,79,.15)}
+.lb[hidden]{display:none}
+.lb a{background:#B7E6D1;color:#03054F;text-decoration:none;font-weight:600;padding:8px 16px;border-radius:10px}
+.lb button{background:none;border:0;color:#F2ECE2;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px}
+</style>
+<div class="lb" id="lb" role="region" aria-label="Language" hidden><span id="lb-t"></span><a id="lb-a" href="en/"></a><button type="button" id="lb-x" aria-label="Close">×</button></div>
+<script>
+(function(){
+  var K='lyd-lang-hint';
+  try{ if(localStorage.getItem(K)) return; }catch(e){}
+  var L=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
+  var t=null;
+  for(var i=0;i<L.length;i++){ var c=L[i].slice(0,2);
+    if(c==='ru'||c==='uk'||c==='be'||c==='kk') return;
+    if(c==='es'){ t='es'; break; }
+    if(c){ t='en'; break; } }
+  if(!t) return;
+  var T={en:['This site is also available in English','Switch to English','en/','Close'],es:['Este sitio también está disponible en español','Ver en español','es/','Cerrar']}[t];
+  var b=document.getElementById('lb'),a=document.getElementById('lb-a'),x=document.getElementById('lb-x');
+  document.getElementById('lb-t').textContent=T[0]; a.textContent=T[1]; a.href=T[2]; x.setAttribute('aria-label',T[3]);
+  a.setAttribute('lang',t); b.setAttribute('lang',t);
+  function done(act){ try{localStorage.setItem(K,act);}catch(e){} try{ if(window.umami) umami.track('lang-hint',{action:act,to:t}); }catch(e){} }
+  a.addEventListener('click',function(){ done('switch'); });
+  x.addEventListener('click',function(){ done('close'); b.hidden=true; });
+  b.hidden=false;
+})();
+</script>
 </body>
 </html>
