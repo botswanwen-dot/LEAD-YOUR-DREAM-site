@@ -68,6 +68,7 @@ html{scroll-behavior:smooth}
 .hdr{transition:background .25s ease,box-shadow .25s ease,border-color .25s ease}
 .hdr.is-scrolled{background:#FBF8F3;border-bottom-color:#B7E6D1;box-shadow:0 8px 24px rgba(3,5,79,.13)}
 @media (max-width:760px){#me{gap:24px;padding-top:16px}#me .hero-ph{order:-1;max-height:56vh!important;max-width:360px!important}}
+@media (min-width:761px){.go-about{scroll-margin-top:calc(var(--hh) - 68px)!important}#about .about-text{gap:10px!important}#about .about-text>div:last-child{margin-top:0!important;padding-top:10px!important}}
 .zoom{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .zoom img{transition:transform .35s ease}
 .zoom:hover img{transform:scale(1.03)}
@@ -157,7 +158,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 </div>
 </div>
 <div id="book" class="go-book" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: center; background: #F2ECE2; border-radius: 28px; padding: 32px 40px; margin-top: 12px">
-<img src="assets/cover-ru.jpg" alt="Обложка книги «Нескучная философия жизни, или Путь к себе»" style="width: 100%; max-width: 285px; justify-self: center; border-radius: 6px; border: 1px solid #D6CDBF">
+<img src="assets/cover-ru.jpg?v=2" alt="Обложка книги «Нескучная философия жизни, или Путь к себе»" width="900" height="1273" style="width: 100%; max-width: 285px; height: auto; justify-self: center; border-radius: 6px; box-shadow: 0 10px 28px rgba(3,5,79,.18)">
 <div style="display: flex; flex-direction: column; gap: 14px">
 <p style="margin: 0; font-family: Caveat, cursive; font-size: 26px; color: #5A3F70">с чего всё началось</p>
 <div style="display: flex; flex-direction: column; gap: 6px">
@@ -400,7 +401,7 @@ document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener(
 document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d){d.close();}});});
 </script>
 <style>
-.lb{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#03054F;color:#F2ECE2;font-size:15px;line-height:1.4;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(3,5,79,.15)}
+.lb{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#03054F;color:#F2ECE2;font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.4;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(3,5,79,.15)}
 .lb[hidden]{display:none}
 .lb a{background:#B7E6D1;color:#03054F;text-decoration:none;font-weight:600;padding:8px 16px;border-radius:10px}
 .lb button{background:none;border:0;color:#F2ECE2;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px}
