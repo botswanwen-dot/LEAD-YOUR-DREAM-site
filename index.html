@@ -454,7 +454,6 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 <script>
 (function(){function show(){
   var K='lyd-lang-hint';
-  if(location.hash==='#book'&&/\/(en|es)\//.test(document.referrer||'')) return;  // пришли с EN/ES за русской версией
   try{ if(localStorage.getItem(K)) return; }catch(e){}
   var L=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
   var t=null;

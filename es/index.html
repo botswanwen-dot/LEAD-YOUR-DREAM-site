@@ -167,9 +167,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 </div>
 <p style="margin: 0">Un libro sobre cómo entender mejor esta vida y conocerte a ti mismo sin sermones: con ejemplos de la vida real y un ejercicio práctico al final. En él encontrarás cosas en las que quizá nunca antes habías pensado.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
 <span style="border: 1.5px dashed #8A7FA3; color: #03054F; padding: 12px 18px; border-radius: 14px; font-size: 15px; font-weight: 600">En Amazon · muy pronto</span>
-<a href="/#book" hreflang="ru" title="Comprar la edición en ruso en la versión rusa del sitio" style="border: 1.5px solid #03054F; color: #03054F; text-decoration: none; padding: 12px 18px; border-radius: 14px; font-size: 15px; font-weight: 500" data-umami-event="ru-edition" data-umami-event-lang="es">Edición en ruso — PDF + EPUB, 399 ₽</a>
 </div>
+<div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start">
+<p role="note" style="margin: 0; background: #FFF7E0; border: 1.5px solid #C9A227; border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.5; color: #03054F; max-width: 460px"><strong>IMPORTANTE: ESTE LIBRO ESTÁ ÚNICAMENTE EN RUSO.</strong> Su compra incluye los archivos PDF y EPUB en ruso. No incluye traducción al español.</p>
+<a href="#buy" class="buy-btn" style="background: #B7E6D1; color: #03054F; text-decoration: none; padding: 14px 24px; border-radius: 14px; font-weight: 600; text-align: center" data-umami-event="buy" data-umami-event-lang="es">Comprar la edición en ruso — PDF + EPUB, 399 ₽</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.45; color: #4A4C7E; max-width: 460px">Al hacer clic en «Comprar», acepta la <a href="/es/oferta/" target="_blank" style="color: #03054F; font-weight: 500">Oferta pública</a>. El pago se procesa mediante Robokassa, un servicio de pagos ruso, en rublos rusos (RUB). Pueden admitirse tarjetas emitidas fuera de Rusia, pero no se garantiza la aceptación de una tarjeta concreta.</p>
+<p id="soon" hidden style="margin: 0; background: #E6DED2; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; color: #03054F; max-width: 460px">El pago en línea se está conectando: la compra se abrirá en los próximos días. Mientras tanto, la edición en ruso está disponible en <a href="https://www.litres.ru/70900735/" target="_blank" rel="noopener" style="color: #03054F">Litres</a>.</p>
+</div>
+<div style="margin-top: 2px; font-size: 14px"><a href="/es/apoyar/" style="color: #5A3F70; text-decoration: none; border-bottom: 1px solid #C9B9DA; padding-bottom: 2px" data-umami-event="support" data-umami-event-place="book" data-umami-event-lang="es">♡ Apoyar a la autora — para la app, el audiolibro y otros proyectos de autora</a></div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 16px">
 <button type="button" class="linkbtn" data-open="dlg-toc" data-umami-event="toc" data-umami-event-lang="es">Índice</button>
 <button type="button" class="linkbtn" data-open="dlg-intro" data-umami-event="intro" data-umami-event-lang="es">Introducción</button>
@@ -350,7 +357,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p style="margin: 0">El libro y este sitio no sustituyen la consulta con un médico o un psicólogo.</p>
 <p style="margin: 0">© 2026 A. Older</p>
 </div>
-<div style="flex-basis: 100%; border-top: 1px solid #D6CDBF; padding-top: 18px; font-size: 13px; line-height: 1.7"><a href="/es/privacy/" style="color: #4A4C7E">Política de tratamiento de datos personales</a> · <a href="#" data-cookies style="color: #4A4C7E">Configuración de cookies</a></div>
+<div style="flex-basis: 100%; border-top: 1px solid #D6CDBF; padding-top: 18px; font-size: 13px; line-height: 1.7"><a href="/es/oferta/" style="color: #4A4C7E">Oferta pública</a> · <a href="/es/condiciones-apoyo/" style="color: #4A4C7E">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/" style="color: #4A4C7E">Política de tratamiento de datos personales</a> · <a href="#" data-cookies style="color: #4A4C7E">Configuración de cookies</a></div>
 </footer>
 </div>
 <dialog id="dlg-toc" class="dlg" aria-labelledby="dlg-toc-t">
@@ -432,6 +439,10 @@ document.getElementById('ck-yes').addEventListener('click',function(){done('yes'
 document.getElementById('ck-no').addEventListener('click',function(){done('no');});
 document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});
 })();
+</script>
+<script>
+(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#buy"],a[data-soon]');if(!a)return;e.preventDefault();
+var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});})();
 </script>
 </body>
 </html>
