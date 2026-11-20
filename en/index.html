@@ -20,7 +20,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F2ECE2">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="16927575-2bc6-409c-aed0-36418e261bea" data-domains="leadyourdream.net"></script>
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('../assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('../assets/fonts/inter-v20-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('../assets/fonts/inter-v20-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:400;font-display:swap;src:url('../assets/fonts/caveat-v23-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:500;font-display:swap;src:url('../assets/fonts/caveat-v23-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:600;font-display:swap;src:url('../assets/fonts/caveat-v23-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Water Brush';font-style:normal;font-weight:400;font-display:swap;src:url('../assets/fonts/water-brush-v6-latin_latin-ext-regular.woff2') format('woff2')}</style>
@@ -54,6 +53,7 @@ a{color:#03054F}a:hover{color:#2B2F8F}
 </style>
 <style>
 html{scroll-behavior:smooth}
+img{-webkit-user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 *{box-sizing:border-box}
 .dlg{border:0;padding:0;border-radius:22px;width:min(720px,calc(100vw - 32px));max-height:86vh;background:#F2ECE2;color:#03054F;font-family:Inter,system-ui,sans-serif}
 .dlg::backdrop{background:rgba(3,5,79,.6)}
@@ -167,8 +167,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 </div>
 <p style="margin: 0">A book about understanding this life better and making sense of yourself without lecturing: with examples from real life and a practical exercise at the end. In it you’ll find things you may never have thought about before.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<span style="border: 1.5px dashed #8A7FA3; color: #03054F; padding: 13px 22px; border-radius: 14px; font-weight: 600">On Amazon · coming soon</span>
-<a href="https://www.litres.ru/70900735/" target="_blank" rel="noopener" style="border: 1.5px solid #03054F; color: #03054F; text-decoration: none; padding: 13px 22px; border-radius: 14px; font-weight: 500" data-umami-event="litres" data-umami-event-lang="en">Russian edition on Litres</a>
+<span style="border: 1.5px dashed #8A7FA3; color: #03054F; padding: 12px 18px; border-radius: 14px; font-size: 15px; font-weight: 600">On Amazon · coming soon</span>
+<a href="https://www.litres.ru/70900735/" target="_blank" rel="noopener" style="border: 1.5px solid #03054F; color: #03054F; text-decoration: none; padding: 12px 18px; border-radius: 14px; font-size: 15px; font-weight: 500" data-umami-event="litres" data-umami-event-lang="en">Russian edition on Litres</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 16px">
 <button type="button" class="linkbtn" data-open="dlg-toc" data-umami-event="toc" data-umami-event-lang="en">Contents</button>
@@ -350,6 +350,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p style="margin: 0">The book and this site do not replace a consultation with a doctor or psychologist.</p>
 <p style="margin: 0">© 2026 A. Older</p>
 </div>
+<div style="flex-basis: 100%; border-top: 1px solid #D6CDBF; padding-top: 18px; font-size: 13px; line-height: 1.7"><a href="/en/privacy/" style="color: #4A4C7E">Personal Data Processing Policy</a> · <a href="#" data-cookies style="color: #4A4C7E">Cookie settings</a></div>
 </footer>
 </div>
 <dialog id="dlg-toc" class="dlg" aria-labelledby="dlg-toc-t">
@@ -396,8 +397,41 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 (function(){var h=document.querySelector('.hdr');function sc(){if(h){h.classList.toggle('is-scrolled',window.scrollY>8);}}sc();window.addEventListener('scroll',sc,{passive:true});})();
 (function(){var h=document.querySelector('.hdr');function f(){if(h){document.documentElement.style.setProperty('--hh',h.offsetHeight+'px');}}f();window.addEventListener('resize',f);if(document.fonts&&document.fonts.ready){document.fonts.ready.then(f);}})();
 document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.getAttribute('data-open'));if(d&&d.showModal){d.showModal();}});});
+(function(){['contextmenu','dragstart'].forEach(function(t){document.addEventListener(t,function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});});})();
 (function(){var pv=document.getElementById('dlg-photo');if(!pv)return;var im=pv.querySelector('img');document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){var t=b.querySelector('img');im.src=b.getAttribute('data-full');im.alt=t.alt;pv.showModal();});});im.addEventListener('click',function(){pv.close();});})();
 document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d){d.close();}});});
+</script>
+<style>
+#ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
+#ck[hidden]{display:none}
+#ck p{margin:0}#ck a{color:#03054F}
+#ck .ck-b{display:flex;gap:10px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:15px;font-weight:600;border-radius:12px;padding:10px 18px;cursor:pointer;border:1.5px solid #03054F;background:transparent;color:#03054F}
+#ck button.ck-yes{background:#B7E6D1;border-color:#B7E6D1}
+@media (max-width:600px){#ck{left:8px;right:8px;bottom:8px;max-width:none}}
+</style>
+<div id="ck" role="region" aria-label="Cookies" hidden>
+<p>We use analytics cookies to understand how visitors use this site. They are enabled only with your consent. Details in our <a href="/en/privacy/">Personal Data Processing Policy</a>.</p>
+<div class="ck-b"><button type="button" class="ck-yes" id="ck-yes">Accept</button><button type="button" id="ck-no">Decline</button></div>
+</div>
+<script>
+(function(){var K='lyd-cookies',ID=114377036;
+function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id='+ID,'ym');
+ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
+var MAXAGE=365*864e5,VER="2026-11-20";
+function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
+function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+var v=get();
+var b=document.getElementById('ck');
+function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}try{if(window.umami)umami.track('cookies',{action:x});}catch(e){}
+ try{document.dispatchEvent(new Event('lyd-consent'));}catch(e){}}
+if(v==='yes'){load();}else{wipe();if(!v){b.hidden=false;}}
+document.getElementById('ck-yes').addEventListener('click',function(){done('yes');});
+document.getElementById('ck-no').addEventListener('click',function(){done('no');});
+document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});
+})();
 </script>
 </body>
 </html>

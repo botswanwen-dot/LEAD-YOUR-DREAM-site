@@ -20,7 +20,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F2ECE2">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="16927575-2bc6-409c-aed0-36418e261bea" data-domains="leadyourdream.net"></script>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/inter-v20-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-v20-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/caveat-v23-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/caveat-v23-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/caveat-v23-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Water Brush';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/water-brush-v6-latin_latin-ext-regular.woff2') format('woff2')}</style>
@@ -54,6 +53,7 @@ a{color:#03054F}a:hover{color:#2B2F8F}
 </style>
 <style>
 html{scroll-behavior:smooth}
+img{-webkit-user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 *{box-sizing:border-box}
 .dlg{border:0;padding:0;border-radius:22px;width:min(720px,calc(100vw - 32px));max-height:86vh;background:#F2ECE2;color:#03054F;font-family:Inter,system-ui,sans-serif}
 .dlg::backdrop{background:rgba(3,5,79,.6)}
@@ -78,6 +78,7 @@ html{scroll-behavior:smooth}
 .pv .dlg-x{position:absolute;top:10px;right:10px;background:#F2ECE2}
 a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3px}
 </style>
+<style>@media (min-width:761px){.go-book{scroll-margin-top:calc(var(--hh) + 6px)!important}#book{padding-top:28px!important;padding-bottom:28px!important}}@media (max-width:760px){#book{padding:24px 20px!important;gap:24px!important}#book>img{max-width:230px!important}}</style>
 </head>
 <body>
 <div id="top" style="background: #F2ECE2; color: #03054F; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.65; overflow-x: clip">
@@ -163,13 +164,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p style="margin: 0; font-family: Caveat, cursive; font-size: 26px; color: #5A3F70">с чего всё началось</p>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <h3 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.15">Нескучная философия жизни</h3>
-<p style="margin: 0; font-size: 18px; font-weight: 500; color: #4A4C7E">или Путь к себе</p>
+<p style="margin: 0; font-size: 18px; font-weight: 500; color: #4A4C7E">или Путь к себе…</p>
 </div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 14px; color: #4A4C7E; background: #E6DED2; border-radius: 999px; padding: 5px 12px">PDF + EPUB</span><span style="font-size: 14px; color: #4A4C7E; background: #E6DED2; border-radius: 999px; padding: 5px 12px">238 страниц</span><span style="font-size: 14px; color: #4A4C7E; background: #E6DED2; border-radius: 999px; padding: 5px 12px">русский язык</span></div>
 <p style="margin: 0">Книга о том, как лучше понять эту жизнь и разобраться в себе без нравоучений: с примерами из жизни и практическим заданием в завершение. В ней вы найдёте то, о чём, возможно, никогда раньше не задумывались.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="https://www.litres.ru/70900735/" target="_blank" rel="noopener" style="background: #B7E6D1; color: #03054F; text-decoration: none; padding: 14px 24px; border-radius: 14px; font-weight: 600" data-umami-event="litres" data-umami-event-lang="ru">Читать на Литрес</a>
-<span style="border: 1.5px dashed #8A7FA3; color: #4A4C7E; padding: 13px 22px; border-radius: 14px; font-size: 15px">Amazon · EN / ES · скоро</span>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<a href="#buy" class="buy-btn" style="background: #B7E6D1; color: #03054F; text-decoration: none; padding: 14px 24px; border-radius: 14px; font-weight: 600; white-space: nowrap; text-align: center" data-umami-event="buy" data-umami-event-lang="ru">Купить PDF и EPUB — 399 ₽</a>
+<p style="margin: 0; width: 0; min-width: 100%; font-size: 14px; line-height: 1.45; color: #4A4C7E">Нажимая «Купить», вы принимаете условия <a href="/oferta/" target="_blank" rel="noopener" style="color:#03054F;font-weight:500;text-decoration:underline;text-underline-offset:2px" data-umami-event="oferta-open">Публичной оферты</a></p>
 </div>
+<p id="soon" hidden style="margin: 4px 0 0; flex-basis: 100%; background: #E6DED2; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; color: #03054F">Онлайн-оплата подключается — покупка откроется в ближайшие дни. А пока книгу можно купить на <a href="https://www.litres.ru/70900735/" style="color: #03054F">Литрес</a>.</p>
+<span style="border: 1.5px dashed #8A7FA3; color: #4A4C7E; padding: 13px 16px; border-radius: 14px; font-size: 14px; white-space: nowrap">Amazon · EN/ES · скоро</span>
+</div>
+<div style="margin-top: 6px; font-size: 14px"><a href="/podderzhat/" style="color: #5A3F70; text-decoration: none; border-bottom: 1px solid #C9B9DA; padding-bottom: 2px" data-umami-event="support" data-umami-event-place="book" data-umami-event-lang="ru">♡ Поддержать автора — на развитие приложения и аудиокнигу</a></div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 16px">
 <button type="button" class="linkbtn" data-open="dlg-toc" data-umami-event="toc" data-umami-event-lang="ru">Оглавление</button>
 <button type="button" class="linkbtn" data-open="dlg-intro" data-umami-event="intro" data-umami-event-lang="ru">Введение</button>
@@ -351,6 +358,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p style="margin: 0; font-size: 12px">* Instagram принадлежит компании Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.</p>
 <p style="margin: 0">© 2026 A. Older</p>
 </div>
+<div style="flex-basis: 100%; border-top: 1px solid #D6CDBF; padding-top: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13px">
+<p style="margin: 0; line-height: 1.7"><a href="/oferta/" style="color: #4A4C7E">Публичная оферта</a> · <a href="/privacy/" style="color: #4A4C7E">Политика обработки персональных данных</a> · <a href="/vozvrat/" style="color: #4A4C7E">Получение и возврат</a> · <a href="#" data-cookies style="color: #4A4C7E">Настройки cookies</a></p>
+<p style="margin: 0">ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва</p>
+</div>
 </footer>
 </div>
 <dialog id="dlg-toc" class="dlg" aria-labelledby="dlg-toc-t">
@@ -397,8 +408,41 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 (function(){var h=document.querySelector('.hdr');function sc(){if(h){h.classList.toggle('is-scrolled',window.scrollY>8);}}sc();window.addEventListener('scroll',sc,{passive:true});})();
 (function(){var h=document.querySelector('.hdr');function f(){if(h){document.documentElement.style.setProperty('--hh',h.offsetHeight+'px');}}f();window.addEventListener('resize',f);if(document.fonts&&document.fonts.ready){document.fonts.ready.then(f);}})();
 document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.getAttribute('data-open'));if(d&&d.showModal){d.showModal();}});});
+(function(){['contextmenu','dragstart'].forEach(function(t){document.addEventListener(t,function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});});})();
 (function(){var pv=document.getElementById('dlg-photo');if(!pv)return;var im=pv.querySelector('img');document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){var t=b.querySelector('img');im.src=b.getAttribute('data-full');im.alt=t.alt;pv.showModal();});});im.addEventListener('click',function(){pv.close();});})();
 document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d){d.close();}});});
+</script>
+<style>
+#ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
+#ck[hidden]{display:none}
+#ck p{margin:0}#ck a{color:#03054F}
+#ck .ck-b{display:flex;gap:10px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:15px;font-weight:600;border-radius:12px;padding:10px 18px;cursor:pointer;border:1.5px solid #03054F;background:transparent;color:#03054F}
+#ck button.ck-yes{background:#B7E6D1;border-color:#B7E6D1}
+@media (max-width:600px){#ck{left:8px;right:8px;bottom:8px;max-width:none}}
+</style>
+<div id="ck" role="region" aria-label="Cookies" hidden>
+<p>Мы используем аналитические файлы cookie, чтобы понимать, как посетители пользуются сайтом. Они включатся только с вашего согласия. Подробнее — в <a href="/privacy/">Политике обработки персональных данных</a>.</p>
+<div class="ck-b"><button type="button" class="ck-yes" id="ck-yes">Принять</button><button type="button" id="ck-no">Отказаться</button></div>
+</div>
+<script>
+(function(){var K='lyd-cookies',ID=114377036;
+function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id='+ID,'ym');
+ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
+var MAXAGE=365*864e5,VER="2026-11-20";
+function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
+function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+var v=get();
+var b=document.getElementById('ck');
+function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}try{if(window.umami)umami.track('cookies',{action:x});}catch(e){}
+ try{document.dispatchEvent(new Event('lyd-consent'));}catch(e){}}
+if(v==='yes'){load();}else{wipe();if(!v){b.hidden=false;}}
+document.getElementById('ck-yes').addEventListener('click',function(){done('yes');});
+document.getElementById('ck-no').addEventListener('click',function(){done('no');});
+document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});
+})();
 </script>
 <style>
 .lb{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#03054F;color:#F2ECE2;font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.4;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(3,5,79,.15)}
@@ -408,7 +452,7 @@ document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('clic
 </style>
 <div class="lb" id="lb" role="region" aria-label="Language" hidden><span id="lb-t"></span><a id="lb-a" href="en/"></a><button type="button" id="lb-x" aria-label="Close">×</button></div>
 <script>
-(function(){
+(function(){function show(){
   var K='lyd-lang-hint';
   try{ if(localStorage.getItem(K)) return; }catch(e){}
   var L=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
@@ -426,7 +470,26 @@ document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('clic
   a.addEventListener('click',function(){ done('switch'); });
   x.addEventListener('click',function(){ done('close'); b.hidden=true; });
   b.hidden=false;
+}var c=null;try{c=localStorage.getItem('lyd-cookies');}catch(e){}
+if(document.getElementById('ck')&&!c){document.addEventListener('lyd-consent',show);}else{show();}
 })();
+</script>
+<style>#rd[hidden]{display:none!important}#rd,#rd a,#rd button{font-family:Inter,system-ui,sans-serif}</style>
+<div id="rd" role="region" aria-label="Поддержать автора" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:55;background:#5A3F70;color:#F2ECE2;font-size:15px;line-height:1.4;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:12px 18px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(3,5,79,.18)">
+<span>Спасибо, что читаете мою книгу!</span>
+<a href="/podderzhat/?from=book" data-umami-event="support" data-umami-event-place="strip" data-umami-event-lang="ru" style="background:#F2ECE2;color:#5A3F70;text-decoration:none;font-weight:600;padding:8px 16px;border-radius:10px">♡ Поддержать автора</a>
+<button type="button" id="rd-x" aria-label="Закрыть" style="background:none;border:0;color:#F2ECE2;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px">×</button>
+</div>
+<script>
+(function(){var K='lyd-reader-strip';var q=new URLSearchParams(location.search);
+ if(q.get('utm_source')!=='book')return; try{if(sessionStorage.getItem(K))return;}catch(e){}
+ var b=document.getElementById('rd');function show(){var lb=document.getElementById('lb');if(lb)lb.hidden=true;b.hidden=false;}
+ var c=null;try{c=localStorage.getItem('lyd-cookies');}catch(e){} if(!c){document.addEventListener('lyd-consent',show);}else{show();}
+ document.getElementById('rd-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem(K,'1');}catch(e){}});})();
+</script>
+<script>
+(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#buy"],a[data-soon]');if(!a)return;e.preventDefault();
+var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});})();
 </script>
 </body>
 </html>
