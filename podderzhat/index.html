@@ -38,14 +38,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <div class="card">
 <p class="hand">спасибо, что вы здесь</p>
 <h1>Поддержать автора</h1>
-<p>Если книга оказалась для вас полезной, вы можете поддержать мою работу. Все средства идут на развитие приложения Lead your Dream™ и запись аудиокниги.</p>
+<p>Если книга оказалась для вас полезной, вы можете поддержать моё творчество. Ваша поддержка помогает мне создавать новые авторские продукты, в том числе развивать приложение Lead your Dream™ и записать аудиоверсию книги.</p>
 <div class="row"><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="100">100 ₽</a><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="200">200 ₽</a><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="500">500 ₽</a></div>
-<div class="row"><a class="btn out" href="#" data-soon data-umami-event="donate" data-umami-event-amount="free">Своя сумма — от 100 ₽</a></div>
+<form id="own" class="row" novalidate style="align-items:center">
+<label for="own-sum" class="small" style="flex-basis:100%">Своя сумма — от 100 до 3 000 ₽, целым числом</label>
+<input id="own-sum" type="number" inputmode="numeric" min="100" max="3000" step="1" placeholder="Например, 300" style="max-width:200px">
+<button class="btn out" type="submit" data-umami-event="donate" data-umami-event-amount="free">Поддержать</button>
+<p id="own-err" hidden class="small" role="alert" style="flex-basis:100%;color:#8A2D3B;margin:0">Введите сумму от 100 до 3 000 ₽ без копеек.</p>
+</form>
 <p id="soon" hidden class="note">Приём оплаты подключается — поддержка откроется в ближайшие дни. Спасибо, что хотите помочь!</p>
-<p class="small">Оплата через Робокассу. Поддержка добровольная и не является оплатой товара или услуги. Нажимая на сумму, вы принимаете условия <a href="/oferta/" target="_blank" rel="noopener" style="color:#03054F;font-weight:500;text-decoration:underline;text-underline-offset:2px" data-umami-event="oferta-open">Публичной оферты</a>.</p>
+<p class="small">Совершая платёж, вы принимаете <a href="/usloviya-podderzhki/" target="_blank" style="color:#03054F;font-weight:500">Условия добровольной поддержки автора</a> (редакция от 20 ноября 2026 года). Поддержка добровольная и безвозмездная: это подарок, а не оплата книги, товара или услуги, и он не даёт доступа к продуктам. Оплата через Робокассу.</p>
 </div>
 </main>
-<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="/usloviya-podderzhki/">Условия поддержки автора</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -77,6 +82,13 @@ document.getElementById('ck-yes').addEventListener('click',function(){done('yes'
 document.getElementById('ck-no').addEventListener('click',function(){done('no');});
 document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});
 })();
+</script>
+<script>
+(function(){var f=document.getElementById('own'),i=document.getElementById('own-sum'),er=document.getElementById('own-err');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();var v=(i.value||'').trim();
+if(!/^[0-9]+$/.test(v)||+v<100||+v>3000){er.hidden=false;i.focus();return;}er.hidden=true;
+var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});
+i.addEventListener('input',function(){er.hidden=true;});})();
 </script>
 <script>
 (function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#buy"],a[data-soon]');if(!a)return;e.preventDefault();
