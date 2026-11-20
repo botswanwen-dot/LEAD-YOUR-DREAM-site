@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recuperar acceso · Lead your Dream™</title>
+<meta name="robots" content="noindex">
+<script>window.__q=location.search;if(location.search&&history.replaceState)history.replaceState(null,"",location.pathname+location.hash);</script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="https://leadyourdream.net/dostup/">
+<link rel="preload" href="/assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-v20-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-v20-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-v20-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/caveat-v23-cyrillic_latin_latin-ext-regular.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/caveat-v23-cyrillic_latin_latin-ext-500.woff2') format('woff2')}@font-face{font-family:'Caveat';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/caveat-v23-cyrillic_latin_latin-ext-600.woff2') format('woff2')}@font-face{font-family:'Water Brush';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/water-brush-v6-latin_latin-ext-regular.woff2') format('woff2')}
+*{box-sizing:border-box}html,body{margin:0;background:#F2ECE2;color:#03054F;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:#03054F}.top{max-width:880px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:'Water Brush',cursive;font-size:34px;text-decoration:none;color:#03054F}.logo sup{font-family:Inter;font-size:12px}
+.back{font-size:15px;color:#4A4C7E}
+main{max-width:880px;margin:0 auto;padding:12px 24px 56px}
+.card{background:#FBF8F3;border-radius:24px;padding:32px 36px;display:flex;flex-direction:column;gap:16px}
+h1{margin:0;font-size:32px;line-height:1.2;font-weight:600}.hand{margin:0;font-family:Caveat,cursive;font-size:26px;color:#5A3F70}
+p{margin:0}.muted{color:#4A4C7E;font-size:15px}.small{font-size:13px;color:#6B6D94}
+.btn{display:inline-block;background:#B7E6D1;color:#03054F;text-decoration:none;padding:14px 24px;border-radius:14px;font-weight:600;border:0;font-size:17px;font-family:inherit;cursor:pointer;text-align:center}
+.btn.out{background:transparent;border:1.5px solid #03054F;padding:12.5px 22px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.amt{min-width:110px}
+label{display:flex;flex-direction:column;gap:6px;font-size:15px;color:#4A4C7E}
+input[type=email],input[type=text],input[type=number]{font:inherit;font-size:17px;color:#03054F;background:#fff;border:1.5px solid #D6CDBF;border-radius:12px;padding:12px 14px;width:100%;max-width:420px}
+input:focus{outline:2px solid #03054F;outline-offset:1px}
+.note{background:#E8E1D7;border-radius:16px;padding:16px 18px;font-size:15px}
+.files{display:flex;flex-direction:column;gap:10px}
+.doc h2{font-size:20px;margin:22px 0 0}.doc h3{font-size:17px;margin:14px 0 0}.doc p{margin:0}.doc ul{margin:0;padding-left:22px}
+footer{max-width:880px;margin:0 auto;padding:0 24px 40px;font-size:13px;color:#4A4C7E;display:flex;flex-direction:column;gap:6px}
+footer a{color:#4A4C7E}
+@media (max-width:600px){.card{padding:24px 20px}h1{font-size:26px}.logo{font-size:28px}}
+a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="top"><a class="logo" href="/es/">Lead your Dream<sup>™</sup></a><a class="back" href="/es/">← Inicio</a></div>
+<main>
+<div class="card">
+<h1>Recuperar el acceso a su compra</h1>
+<p>Indique el correo electrónico utilizado en la compra y el número de pedido del correo o del comprobante de Robokassa. Enviaremos nuevos enlaces a ese correo; serán válidos durante 24 horas.</p>
+<p class="muted">El acceso puede recuperarse durante 7 días naturales después del pago.</p>
+<form id="rf" style="display:flex;flex-direction:column;gap:14px">
+<label>Correo electrónico<input type="email" name="email" required autocomplete="email"></label>
+<label>Número de pedido<input type="text" name="order" required inputmode="numeric" pattern="[0-9]+"></label>
+<div><button class="btn" type="submit">Enviar enlaces</button></div>
+<p class="muted" id="rf-msg" role="status"></p>
+</form>
+<p class="small">¿El archivo no se abre o está dañado? Escriba a <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a> con el asunto «Problema con el libro electrónico — pedido n.º …». Respondemos en 2 días hábiles.</p>
+</div>
+</main>
+<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<style>
+#ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
+#ck[hidden]{display:none}
+#ck p{margin:0}#ck a{color:#03054F}
+#ck .ck-b{display:flex;gap:10px;flex-wrap:wrap}
+#ck button{font:inherit;font-size:15px;font-weight:600;border-radius:12px;padding:10px 18px;cursor:pointer;border:1.5px solid #03054F;background:transparent;color:#03054F}
+#ck button.ck-yes{background:#B7E6D1;border-color:#B7E6D1}
+@media (max-width:600px){#ck{left:8px;right:8px;bottom:8px;max-width:none}}
+</style>
+<div id="ck" role="region" aria-label="Cookies" hidden>
+<p>Usamos cookies analíticas para entender cómo los visitantes usan este sitio. Se activan solo con su consentimiento. Más información en nuestra <a href="/es/privacy/">Política de tratamiento de datos personales</a>.</p>
+<div class="ck-b"><button type="button" class="ck-yes" id="ck-yes">Aceptar</button><button type="button" id="ck-no">Rechazar</button></div>
+</div>
+<script>
+(function(){var K='lyd-cookies',ID=114377036;
+function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id='+ID,'ym');
+ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
+var MAXAGE=365*864e5,VER="2026-11-20";
+function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
+function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
+var v=get();
+var b=document.getElementById('ck');
+function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}try{if(window.umami)umami.track('cookies',{action:x});}catch(e){}
+ try{document.dispatchEvent(new Event('lyd-consent'));}catch(e){}}
+if(v==='yes'){load();}else{wipe();if(!v){b.hidden=false;}}
+document.getElementById('ck-yes').addEventListener('click',function(){done('yes');});
+document.getElementById('ck-no').addEventListener('click',function(){done('no');});
+document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});
+})();
+</script>
+<script>
+(function(){var API="";var f=document.getElementById('rf'),m=document.getElementById('rf-msg');
+f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
+ if(!API){m.textContent="El servicio estar\u00e1 disponible pronto. Mientras tanto, escriba a contact@leadyourdream.net.";return;}
+ m.textContent="Enviando\u2026";
+ fetch(API+'/restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order'),lang:"es"})})
+ .then(function(){m.textContent="Si se encuentra el pedido, el correo con los enlaces llegar\u00e1 en unos minutos. Revise la carpeta de spam.";})
+ .catch(function(){m.textContent="No se pudo enviar. Int\u00e9ntelo m\u00e1s tarde o escriba a contact@leadyourdream.net.";});});})();
+</script>
+</body>
+</html>
