@@ -88,7 +88,7 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
  if(!API){m.textContent="The service will be available soon. Meanwhile, please email contact@leadyourdream.net.";return;}
  m.textContent="Sending\u2026";
- fetch(API+'/restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order'),lang:"en"})})
+ fetch(API+'?a=restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order'),lang:"en"})})
  .then(function(){m.textContent="If the order is found, an email with links will arrive within a few minutes. Please check your Spam folder.";})
  .catch(function(){m.textContent="Could not send. Please try again later or email contact@leadyourdream.net.";});});})();
 </script>

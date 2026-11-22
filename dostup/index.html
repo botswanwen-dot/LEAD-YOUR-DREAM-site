@@ -88,7 +88,7 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
  if(!API){m.textContent='Сервис скоро заработает. Пока напишите нам на contact@leadyourdream.net.';return;}
  m.textContent='Отправляем…';
- fetch(API+'/restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order')})})
+ fetch(API+'?a=restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order')})})
  .then(function(){m.textContent='Если заказ найден, письмо со ссылками придёт в течение нескольких минут. Проверьте папку «Спам».';})
  .catch(function(){m.textContent='Не получилось отправить. Попробуйте позже или напишите на contact@leadyourdream.net.';});});})();
 </script>
