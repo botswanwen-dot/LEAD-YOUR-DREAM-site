@@ -60,6 +60,13 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <li>information about requests, technical problems and refunds.</li>
 </ul>
 <p>Legal grounds for processing: the conclusion and performance of a contract with the data subject, the fulfilment of obligations established by law, and other applicable grounds provided for by Article 6 of Federal Law No. 152-FZ.</p>
+<p><strong>Email address of a buyer of an electronic edition.</strong> When an order for an electronic edition is placed, the Operator receives the email address provided by the Buyer and processes it for the purposes of concluding and performing the contract, transmitting the necessary information to the Robokassa payment service to generate and send the electronic fiscal receipt, providing links to the electronic files, restoring access to the purchased edition and handling the Buyer’s requests.</p>
+<p>The email address is processed on the basis of clause 5, part 1, Article 6 of Federal Law No. 152-FZ without separate consent, since the processing is necessary for the conclusion and performance of the contract.</p>
+<p>If payment is not completed, the email address is deleted from temporary storage no later than 24 hours after the order is created, unless there are other legal grounds for keeping it.</p>
+<p>After successful payment, the email address is stored in plain form for the time needed to send the message with links to the electronic edition and to complete the planned delivery retries. The plain address is then deleted from the operational order database.</p>
+<p>To automatically verify the right to restore access within the period established by the contract, a protected verification value of the email address may be kept, which allows it to be matched against an address re-entered by the Buyer without storing the original address in that database.</p>
+<p>Information about the order, payment, provision of the electronic edition and performance of obligations is kept for the periods established by the legislation of the Russian Federation and this Policy.</p>
+<p>The email address is not used for advertising mailings without a separate legal basis.</p>
 <p>If the sale of physical goods is introduced, the data processed may additionally include the information required for delivery, including the recipient’s name, delivery address and contact details. The corresponding provisions apply from the moment delivery is actually introduced and the necessary documents are updated.</p>
 <h3>2.2. Handling requests</h3>
 <p>When a request is sent to the Operator, the following may be processed:</p>
@@ -197,14 +204,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 (function(){var K='lyd-cookies',ID=114377036;
 function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
 for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,k.onerror=function(){window.__ymFailed=1;try{document.dispatchEvent(new Event('lyd-ym-failed'));}catch(x){}},a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
 ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
 var MAXAGE=365*864e5,VER="2026-11-20";
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
 function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
 var v=get();
 var b=document.getElementById('ck');
-function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}try{if(window.umami)umami.track('cookies',{action:x});}catch(e){}
+function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}
  try{document.dispatchEvent(new Event('lyd-consent'));}catch(e){}}
 if(v==='yes'){load();}else{wipe();if(!v){b.hidden=false;}}
 document.getElementById('ck-yes').addEventListener('click',function(){done('yes');});
