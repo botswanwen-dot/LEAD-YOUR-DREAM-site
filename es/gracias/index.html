@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p class="small">El PDF es cómodo en ordenador o tableta; el EPUB, en apps de lectura del teléfono (Apple Libros, Google Play Libros, ReadEra, etc.). Para verlo como fue diseñado, active el formato original y la división de palabras en su app de lectura — <a href="/es/entrega-devoluciones/">más información</a>.</p>
 </div>
 </main>
-<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="/es/recuperar-acceso/">Recuperar acceso</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -83,7 +83,9 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 })();
 </script>
 <script>
-(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var q=new URLSearchParams(window.__q||'');if(q.get('InvId'))document.getElementById('inv').textContent=q.get('InvId');var box=document.getElementById('files'),w=document.getElementById('files-wait');
+(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var q=new URLSearchParams(window.__q||'');
+if(q.get('Shp_type')==='donation'){document.querySelector('main .card').innerHTML="<p class=\"hand\">\u00a1gracias!</p><h1>\u00a1Gracias por su apoyo!</h1><p>Su regalo ha sido recibido. Significa mucho para m\u00ed: gracias por ayudar a que mis proyectos de autora crezcan.</p><p class=\"small\">El comprobante electr\u00f3nico llegar\u00e1 al correo indicado en el pago. Condiciones: <a href=\"/es/condiciones-apoyo/\" style=\"color:#6B6D94\">Condiciones de apoyo voluntario a la autora</a>.</p><p><a class=\"btn\" href=\"/es/\">Inicio</a></p>";return;}
+if(q.get('InvId'))document.getElementById('inv').textContent=q.get('InvId');var box=document.getElementById('files'),w=document.getElementById('files-wait');
 function fail(){w.textContent="Los enlaces se enviar\u00e1n al correo indicado en el pago. Si no recibe el correo en 15 minutos, revise el spam o recupere el acceso m\u00e1s abajo.";}
 if(!API||!q.get('InvId')){fail();return;}
 var tries=0;function get(){fetch(API+'?a=links&'+q.toString()).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(d){if(!d.pdf){if(d.status==='created'&&++tries<15){setTimeout(get,2000);return;}fail();return;}box.innerHTML='';

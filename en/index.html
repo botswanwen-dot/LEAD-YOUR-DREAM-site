@@ -174,7 +174,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <a href="#buy" class="buy-btn" data-confirm="buy-dlg" style="background: #B7E6D1; color: #03054F; text-decoration: none; padding: 14px 24px; border-radius: 14px; font-weight: 600; white-space: nowrap; text-align: center" data-umami-event="buy" data-umami-event-lang="en">Buy the RUSSIAN edition — PDF + EPUB, 399 ₽ (≈ $5)</a>
 <p style="margin: 0; width: 0; min-width: 100%; font-size: 14px; line-height: 1.45; color: #4A4C7E">By clicking “Buy”, you accept the <a href="/en/offer/" target="_blank" style="color: #03054F; font-weight: 500">Public Offer</a>.</p>
 </div>
-<p id="soon" hidden style="margin: 4px 0 0; flex-basis: 100%; background: #E6DED2; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; color: #03054F">Online payment is being connected — purchase will open in the next few days. Meanwhile, the Russian edition is available on <a href="https://www.litres.ru/70900735/" target="_blank" rel="noopener" style="color: #03054F">Litres</a>.</p>
+<p id="soon" hidden style="margin: 4px 0 0; flex-basis: 100%; background: #E6DED2; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; color: #03054F">Purchase from the English version will open soon. Meanwhile, you can buy the Russian edition on the <a href="/#book" hreflang="ru" style="color: #03054F">Russian version of the site</a>.</p>
 <span style="border: 1.5px dashed #8A7FA3; color: #4A4C7E; padding: 11px 16px; border-radius: 14px; font-size: 14px; white-space: nowrap">On Amazon · coming soon</span>
 </div>
 <div style="margin-top: 6px; font-size: 14px"><a href="/en/support/" style="color: #5A3F70; text-decoration: none; border-bottom: 1px solid #C9B9DA; padding-bottom: 2px; font-weight: 600" data-umami-event="support" data-umami-event-place="book" data-umami-event-lang="en">♡ Support the author — for the app, the audiobook and other author projects</a></div>
@@ -429,14 +429,14 @@ document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('clic
 (function(){var K='lyd-cookies',ID=114377036;
 function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
 for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,k.onerror=function(){window.__ymFailed=1;try{document.dispatchEvent(new Event('lyd-ym-failed'));}catch(x){}},a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
 ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
 var MAXAGE=365*864e5,VER="2026-11-20";
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
 function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
 var v=get();
 var b=document.getElementById('ck');
-function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}try{if(window.umami)umami.track('cookies',{action:x});}catch(e){}
+function done(x){var was=get();try{localStorage.setItem(K,JSON.stringify({v:x,t:Date.now(),ver:VER}));}catch(e){}b.hidden=true;if(x==='yes')load();if(x==='no'){wipe();if(was==='yes'){location.reload();return;}}
  try{document.dispatchEvent(new Event('lyd-consent'));}catch(e){}}
 if(v==='yes'){load();}else{wipe();if(!v){b.hidden=false;}}
 document.getElementById('ck-yes').addEventListener('click',function(){done('yes');});

@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p class="small">PDF удобно читать на компьютере и планшете, EPUB — в приложениях для чтения на телефоне (Apple Книги, Google Play Книги, ReadEra и др.). Чтобы книга выглядела как задумано, включите в читалке оригинальное оформление и перенос слов — <a href="/vozvrat/">подробнее</a>.</p>
 </div>
 </main>
-<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="/usloviya-podderzhki/">Условия поддержки автора</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="/usloviya-podderzhki/">Условия поддержки автора</a> · <a href="/dostup/">Восстановить доступ</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -83,7 +83,10 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 })();
 </script>
 <script>
-(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var q=new URLSearchParams(window.__q||'');if(q.get('InvId'))document.getElementById('inv').textContent=q.get('InvId');var box=document.getElementById('files'),w=document.getElementById('files-wait');
+(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var q=new URLSearchParams(window.__q||'');var L=q.get('Shp_lang');
+if(L==='en'||L==='es'){location.replace((L==='en'?'/en/thank-you/':'/es/gracias/')+(window.__q||''));return;}
+if(q.get('Shp_type')==='donation'){document.querySelector('main .card').innerHTML='<p class="hand">спасибо!</p><h1>Спасибо за поддержку!</h1><p>Ваш дар получен. Это очень ценно для меня — спасибо, что помогаете развивать мои авторские проекты.</p><p class="small">Электронный чек придёт на почту, указанную при оплате. Условия: <a href="/usloviya-podderzhki/" style="color:#6B6D94">Условия добровольной поддержки автора</a>.</p><p><a class="btn" href="/">На главную</a></p>';document.title='Спасибо за поддержку · Lead your Dream™';return;}
+if(q.get('InvId'))document.getElementById('inv').textContent=q.get('InvId');var box=document.getElementById('files'),w=document.getElementById('files-wait');
 function fail(){w.textContent='Ссылки придут на почту, указанную при оплате. Если письма нет 15 минут — проверьте «Спам» или восстановите доступ ниже.';}
 if(!API||!q.get('InvId')){fail();return;}
 var tries=0;function get(){fetch(API+'?a=links&'+q.toString()).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(d){if(!d.pdf){if(d.status==='created'&&++tries<15){setTimeout(get,2000);return;}fail();return;}box.innerHTML='';
