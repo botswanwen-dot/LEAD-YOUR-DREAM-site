@@ -323,8 +323,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <figcaption style="font-size: 13px; color: #4A4C7E; line-height: 1.45; padding: 0 4px 2px">Wildberries · libro · 31 de diciembre de 2024</figcaption>
 </figure>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 18px; border-top: 1px solid #E6DED2"><h4 style="margin: 0; font-size: 19px; font-weight: 600">Reseñas de la edición en español</h4><p id="rv-rating" hidden style="margin: 0; font-size: 15px; color: #4A4C7E"><span style="color: #9A6514; letter-spacing: 1px" aria-hidden="true">★★★★★</span> <span data-rv-txt></span></p></div>
-<p id="rv-empty" style="margin: 0; font-size: 15px; color: #4A4C7E">Todavía no hay reseñas de la edición en español. Sé la primera persona en compartir tus impresiones.</p>
+<div id="rv-head" hidden style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 14px; border-top: 1px solid #E6DED2"><h4 style="margin: 0; font-size: 19px; font-weight: 600">Reseñas de la edición en español</h4><p id="rv-rating" hidden style="margin: 0; font-size: 15px; color: #4A4C7E"><span style="color: #9A6514; letter-spacing: 1px" aria-hidden="true">★★★★★</span> <span data-rv-txt></span></p></div>
 <div id="rv-list" data-rv-sub hidden role="list" aria-label="Reseñas de la edición en español" style="display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px"><span data-rv-anchor hidden></span></div>
 <div class="rv-cta"><button type="button" data-rv-open>Escribir una reseña</button><span>Las reseñas se publican tras la moderación</span></div>
 </div>
@@ -492,6 +491,7 @@ d.addEventListener('click',function(e){if(e.target===d)d.close();});})();
 .rv-card{margin:0;scroll-snap-align:start;background:#fff;border:1px solid #E6DED2;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px}
 .rv-card .st{margin:0;color:#9A6514;font-size:14px;letter-spacing:1px}.rv-card .nr{margin:0;color:#4A4C7E;font-size:12.5px}
 .rv-card blockquote{margin:0;font-size:14px;line-height:1.55;white-space:pre-line}.rv-card figcaption{font-size:13px;color:#4A4C7E;line-height:1.45}
+#rv-head[hidden],#rv-list[hidden],#rv-rating[hidden]{display:none!important}
 .rv-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.rv-cta button{font:inherit;font-weight:600;font-size:15px;background:#B7E6D1;color:#03054F;border:0;border-radius:14px;padding:12px 22px;cursor:pointer}
 .rv-cta span{font-size:14px;color:#4A4C7E}
 </style>
@@ -515,7 +515,7 @@ d.addEventListener('click',function(e){if(e.target===d)d.close();});})();
 <p class="sm" id="rv-hint">Marca la casilla para enviar tu reseña</p>
 </form><div class="done" hidden><p class="hand">gracias por compartir</p><p style="margin:0;font-size:15px">¡Gracias! Leemos cada reseña y publicamos las que cumplen las <a href="/es/condiciones-resenas/" target="_blank">Condiciones de publicación de reseñas</a>.</p><div class="bt"><button type="button" class="go" data-close>Cerrar</button></div></div></dialog>
 <script>
-(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718",L="es",T={"e_day": "Ya se ha enviado una reseña desde este dispositivo hoy. Inténtalo de nuevo mañana.", "e_busy": "Ahora hay muchas reseñas pendientes de moderación. Inténtalo de nuevo en unos días.", "e_net": "No se pudo enviar. Comprueba la conexión e inténtalo de nuevo.", "no_rating": "sin valoración", "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"], "pl": [["valoración", "valoraciones", "valoraciones"], ["reseña", "reseñas", "reseñas"]], "dec": ",", "prod": {"book": "libro"}, "chan": {"site": "sitio web", "amazon": "Amazon", "litres": "Litres", "wb": "Wildberries", "other": ""}},d=document,dlg=d.getElementById('rv-dlg');if(!dlg)return;
+(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718",L="es",T={"e_day": "Ya se ha enviado una reseña desde este dispositivo hoy. Inténtalo de nuevo mañana.", "e_busy": "Ahora hay muchas reseñas pendientes de moderación. Inténtalo de nuevo en unos días.", "e_net": "No se pudo enviar. Comprueba la conexión e inténtalo de nuevo.", "no_rating": "sin valoración", "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"], "pl": [["valoración", "valoraciones", "valoraciones"], ["reseña", "reseñas", "reseñas"]], "dec": ",", "prod": {"book": "libro"}, "chan": {"site": "sitio web", "amazon": "Amazon", "litres": "Litres", "wb": "Wildberries", "other": ""}, "q": ["«", "»"]},d=document,dlg=d.getElementById('rv-dlg');if(!dlg)return;
 var f=dlg.querySelector('form'),done=dlg.querySelector('.done'),send=d.getElementById('rv-send'),hint=d.getElementById('rv-hint'),terms=d.getElementById('rv-terms'),
 msg=d.getElementById('rv-msg'),nm=d.getElementById('rv-name'),tx=d.getElementById('rv-text'),pv=d.getElementById('rv-priv'),opened=0,rating=0;
 function mask(n){n=(n||'').replace(/\s+/g,' ').trim();var a=Array.from(n);if(!a.length)return '';if(a.length<=2)return a[0]+'*';return a[0]+'*'.repeat(a.length-2)+a[a.length-1];}
@@ -549,11 +549,11 @@ function pl(n,f){var a=n%10,b=n%100;if(L!=='ru')return n===1?f[0]:f[1];return (a
 fetch(API+'?a=reviews&lang='+L).then(function(r){return r.json();}).then(function(j){var items=j.items||[];
  items.forEach(function(it){var fg=d.createElement('figure');fg.className='rv-card';fg.setAttribute('role','listitem');
   var st=d.createElement('p');if(it.rating){st.className='st';st.textContent='★'.repeat(it.rating)+'☆'.repeat(5-it.rating);st.setAttribute('aria-label',it.rating+'/5');}else{st.className='nr';st.textContent=T.no_rating;}
-  var q=d.createElement('blockquote');q.textContent='«'+it.text+'»';var c=d.createElement('figcaption');var dt=(it.date||'').split('-');
+  var q=d.createElement('blockquote');q.textContent=T.q[0]+it.text+T.q[1];var c=d.createElement('figcaption');var dt=(it.date||'').split('-');
   var parts=[it.name,T.prod[it.product]||'',T.chan[it.channel]||'',dt.length===2?T.months[+dt[1]-1]+' '+dt[0]:''].filter(Boolean);c.textContent=parts.join(' · ');
   fg.appendChild(st);fg.appendChild(q);fg.appendChild(c);list.insertBefore(fg,list.querySelector('[data-rv-anchor]'));});
  if(items.length){list.style.scrollSnapType='none';list.scrollLeft=0;setTimeout(function(){list.scrollLeft=0;list.style.scrollSnapType='';},50);}
- var e=d.getElementById('rv-empty');if(e)e.hidden=items.length>0;if(list.hasAttribute('data-rv-sub'))list.hidden=!items.length;
+ var hd=d.getElementById('rv-head');if(hd)hd.hidden=!items.length;if(list.hasAttribute('data-rv-sub'))list.hidden=!items.length;
  var R=j.rating||{};if(rl&&R.avg&&R.ratings){rl.hidden=false;rl.querySelector('[data-rv-txt]').textContent=String(R.avg.toFixed(1)).replace('.',T.dec)+' · '+R.ratings+' '+pl(R.ratings,T.pl[0])+' · '+R.reviews+' '+pl(R.reviews,T.pl[1])+(R.sources&&R.sources.length?' · '+R.sources.join(', '):'');}
 }).catch(function(){});})();
 </script>
