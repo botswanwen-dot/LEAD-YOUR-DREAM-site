@@ -70,7 +70,7 @@ function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function
 for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,k.onerror=function(){window.__ymFailed=1;try{document.dispatchEvent(new Event('lyd-ym-failed'));}catch(x){}},a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
 ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
-var MAXAGE=365*864e5,VER="2026-11-20";
+var MAXAGE=365*864e5,VER="2026-11-24";
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
 function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
 var v=get();

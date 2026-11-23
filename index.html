@@ -239,9 +239,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <div id="reviews" class="go-reviews" style="display: flex; flex-direction: column; gap: 18px; padding-top: 16px; border-top: 1px solid #D6CDBF">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 24px">
 <h3 style="margin: 0; font-size: 22px; font-weight: 600">Первые отзывы читателей книги и покупателей блокнотов</h3>
-<p style="margin: 0; font-size: 15px; color: #4A4C7E"><span style="color: #9A6514; letter-spacing: 1px" aria-hidden="true">★★★★★</span> 4,9 · 13 отзывов · Wildberries и Литрес</p>
+<p id="rv-rating" style="margin: 0; font-size: 15px; color: #4A4C7E"><span style="color: #9A6514; letter-spacing: 1px" aria-hidden="true">★★★★★</span> <span data-rv-txt>4,9 · 13 отзывов · Wildberries и Литрес</span></p>
 </div>
-<div role="list" aria-label="Отзывы" style="display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px">
+<div id="rv-list" role="list" aria-label="Отзывы" style="display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px">
+<span data-rv-anchor hidden></span>
 <figure role="listitem" style="margin: 0; scroll-snap-align: start; background: #E8E1D7; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
 <div style="background: #FFFFFF; border-radius: 12px; overflow: hidden; height: 150px; display: flex; align-items: center; justify-content: center">
 <img src="assets/reviews/r01_litres.jpg" alt="Скриншот отзыва: Литрес, книга, 24 июля 2024" loading="lazy" style="width: 100%; height: 100%; object-fit: contain">
@@ -321,6 +322,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <figcaption style="font-size: 13px; color: #4A4C7E; line-height: 1.45; padding: 0 4px 2px">Wildberries · книга · 31 декабря 2024</figcaption>
 </figure>
 </div>
+<div class="rv-cta"><button type="button" data-rv-open>Оставить отзыв</button><span>Отзывы публикуются после модерации</span></div>
 </div>
 </section>
 
@@ -430,7 +432,7 @@ function load(){if(window.ym)return;(function(m,e,t,r,i,k,a){m[i]=m[i]||function
 for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,k.onerror=function(){window.__ymFailed=1;try{document.dispatchEvent(new Event('lyd-ym-failed'));}catch(x){}},a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id='+ID,'ym');
 ym(ID,'init',{ssr:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});}
-var MAXAGE=365*864e5,VER="2026-11-20";
+var MAXAGE=365*864e5,VER="2026-11-24";
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(!o||!o.v)return null;if(o.ver!==VER||Date.now()-o.t>MAXAGE){localStorage.removeItem(K);return null;}return o.v;}catch(e){return null;}}
 function wipe(){document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ym')===0){['',';domain=.'+location.hostname,';domain='+location.hostname].forEach(function(d){document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+d;});}});}
 var v=get();
@@ -504,5 +506,90 @@ if(document.getElementById('ck')&&!c){document.addEventListener('lyd-consent',sh
 <div class="bt"><button type="submit" class="go">Перейти к оплате</button><button type="button" class="no" onclick="this.closest('dialog').close()">Отмена</button></div>
 </form></dialog>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-buy-ru]');if(!a)return;e.preventDefault();var d=document.getElementById('buy-ru');if(d.showModal)d.showModal();else d.setAttribute('open','');});</script>
+<style>
+#rv-dlg{font-family:Inter,system-ui,sans-serif;border:0;border-radius:18px;padding:0;max-width:460px;width:calc(100% - 24px);max-height:calc(100vh - 24px);color:#03054F;background:#FBF8F3;box-shadow:0 20px 60px rgba(3,5,79,.25)}
+#rv-dlg::backdrop{background:rgba(3,5,79,.45)}#rv-dlg [hidden]{display:none!important}#rv-dlg form,#rv-dlg .done{padding:20px 22px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.5}
+#rv-dlg .hand{margin:0;font-family:Caveat,cursive;font-size:21px;color:#4A4C7E}#rv-dlg .ttl{margin:0 0 6px;font-size:19px;font-weight:600}
+#rv-dlg .rv-lb{margin:8px 0 2px;font-weight:600;font-size:13.5px}#rv-dlg .rv-lb span{font-weight:400;color:#4A4C7E}
+#rv-dlg input[type=text],#rv-dlg textarea{font:inherit;width:100%;box-sizing:border-box;padding:9px 11px;border:1.5px solid #D6CDBF;border-radius:10px;background:#fff;color:#03054F}
+#rv-dlg textarea{resize:vertical}#rv-dlg .sm{margin:0;font-size:12px;color:#4A4C7E}#rv-dlg .row{display:flex;justify-content:space-between;gap:8px}
+#rv-dlg .chips{display:flex;flex-wrap:wrap;gap:6px}#rv-dlg .chips label{cursor:pointer}#rv-dlg .chips input{position:absolute;opacity:0;width:1px;height:1px}
+#rv-dlg .chips span{display:inline-block;border:1.5px solid #D6CDBF;border-radius:20px;padding:4px 12px;font-size:13px}
+#rv-dlg .chips input:checked+span{background:#03054F;border-color:#03054F;color:#fff}#rv-dlg .chips input:focus-visible+span{outline:2px solid #03054F;outline-offset:2px}
+#rv-dlg .stars{display:flex;gap:2px}#rv-dlg .stars button{font-size:26px;line-height:1;background:none;border:0;padding:0 2px;cursor:pointer;color:#D6CDBF}#rv-dlg .stars button.on{color:#9A6514}
+#rv-dlg .priv{margin-top:10px;padding:12px;border-radius:12px;background:#EFEAF6;border:1.5px dashed #9C9ED0}
+#rv-dlg .ck{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:12.5px}#rv-dlg .ck input{margin-top:3px;width:16px;height:16px;flex:0 0 16px}
+#rv-dlg a{color:#03054F}#rv-dlg .err{margin:0;font-size:12.5px;color:#8A2D3B}#rv-dlg .bt{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+#rv-dlg button.go,#rv-dlg button.no{font:inherit;font-weight:600;border-radius:12px;padding:11px 18px;cursor:pointer;border:1.5px solid #03054F;background:transparent;color:#03054F}
+#rv-dlg button.go{background:#B7E6D1;border-color:#B7E6D1}#rv-dlg button.go:disabled{background:#E3E0DA;border-color:#E3E0DA;color:#8A8BA8;cursor:not-allowed}
+#rv-dlg .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.rv-card{margin:0;scroll-snap-align:start;background:#fff;border:1px solid #E6DED2;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.rv-card .st{margin:0;color:#9A6514;font-size:14px;letter-spacing:1px}.rv-card .nr{margin:0;color:#4A4C7E;font-size:12.5px}
+.rv-card blockquote{margin:0;font-size:14px;line-height:1.55;white-space:pre-line}.rv-card figcaption{font-size:13px;color:#4A4C7E;line-height:1.45}
+.rv-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.rv-cta button{font:inherit;font-weight:600;font-size:15px;background:#B7E6D1;color:#03054F;border:0;border-radius:14px;padding:12px 22px;cursor:pointer}
+.rv-cta span{font-size:14px;color:#4A4C7E}
+</style>
+<dialog id="rv-dlg" class="ym-hide-content ym-disable-keys" aria-labelledby="rv-ttl"><form novalidate>
+<p class="hand">спасибо, что делитесь</p><p class="ttl" id="rv-ttl">Ваш отзыв</p>
+<label class="rv-lb" for="rv-name">Как подписать отзыв</label><input type="text" id="rv-name" name="name" maxlength="40" autocomplete="off" placeholder="Имя или псевдоним">
+<p class="sm" id="rv-shown" hidden>На сайте будет показано: <b></b></p><p class="err" data-e="name" hidden>Укажите, как подписать отзыв</p>
+<p class="rv-lb">О чём отзыв</p><div class="chips" role="radiogroup"><label><input type="radio" name="product" value="book"><span>Книга</span></label><label><input type="radio" name="product" value="notebook"><span>Блокнот</span></label><label><input type="radio" name="product" value="planner"><span>Ежедневник</span></label></div><p class="err" data-e="product" hidden>Выберите, о чём отзыв</p>
+<p class="rv-lb">Где приобрели <span>(необязательно)</span></p><div class="chips" role="radiogroup"><label><input type="radio" name="channel" value="site"><span>Сайт</span></label><label><input type="radio" name="channel" value="amazon"><span>Amazon</span></label><label><input type="radio" name="channel" value="litres"><span>Литрес</span></label><label><input type="radio" name="channel" value="wb"><span>Wildberries</span></label><label><input type="radio" name="channel" value="other"><span>Другое</span></label></div>
+<p class="rv-lb">Оценка <span>(необязательно)</span></p><div class="stars" role="group" aria-label="Оценка"><button type="button" data-v="1" aria-label="1/5">★</button><button type="button" data-v="2" aria-label="2/5">★</button><button type="button" data-v="3" aria-label="3/5">★</button><button type="button" data-v="4" aria-label="4/5">★</button><button type="button" data-v="5" aria-label="5/5">★</button></div>
+<label class="rv-lb" for="rv-text">Текст отзыва</label><textarea id="rv-text" name="text" rows="4" maxlength="1000" placeholder="Что понравилось, что хотелось бы иначе…"></textarea>
+<div class="row sm"><span>Не меньше 50 символов</span><span><span id="rv-n">0</span> / 1000</span></div><p class="err" data-e="text" hidden>Текст отзыва — от 50 до 1000 символов</p>
+<div class="priv"><label class="rv-lb" for="rv-priv" style="margin-top:0">🔒 Есть чем поделиться? <span>(необязательно)</span></label>
+<textarea id="rv-priv" name="private" rows="3" maxlength="1500" placeholder="То, что Вы напишете в этом поле, увидит только автор (не публикуется). Ответ на это сообщение не предусмотрен."></textarea>
+<div class="row sm"><span></span><span><span id="rv-pn">0</span> / 1500</span></div><p class="err" data-e="private" hidden>Не больше 1500 символов</p></div>
+<div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<p class="sm" style="margin-top:8px">Не указывайте в тексте телефон, адрес и другие личные данные. При модерации текст отзыва может быть сокращён без искажения смысла.</p>
+<label class="ck"><input type="checkbox" name="terms" id="rv-terms"><span>Я ознакомился(-ась) с <a href="/usloviya-otzyvov/" target="_blank">Условиями публикации отзывов</a> и <a href="/privacy/" target="_blank">Политикой обработки персональных данных</a> и принимаю Условия публикации отзывов.</span></label>
+<p class="err" id="rv-msg" hidden></p>
+<div class="bt"><button type="submit" class="go" id="rv-send" disabled>Отправить отзыв</button><button type="button" class="no" data-close>Отмена</button></div>
+<p class="sm" id="rv-hint">Отметьте галочку, чтобы отправить отзыв</p>
+</form><div class="done" hidden><p class="hand">спасибо, что делитесь</p><p style="margin:0;font-size:15px">Спасибо! Мы читаем каждый отзыв и публикуем те, что соответствуют <a href="/usloviya-otzyvov/" target="_blank">Условиям публикации отзывов</a>.</p><div class="bt"><button type="button" class="go" data-close>Закрыть</button></div></div></dialog>
+<script>
+(function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718",L="ru",T={"e_day": "С этого устройства сегодня уже отправляли отзыв. Попробуйте, пожалуйста, завтра.", "e_busy": "Сейчас на проверке много отзывов. Попробуйте, пожалуйста, через несколько дней.", "e_net": "Не удалось отправить. Проверьте подключение и попробуйте ещё раз.", "no_rating": "без оценки", "months": ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"], "pl": [["оценка", "оценки", "оценок"], ["отзыв", "отзыва", "отзывов"]], "dec": ",", "prod": {"book": "книга", "notebook": "блокнот", "planner": "ежедневник"}, "chan": {"site": "сайт", "amazon": "Amazon", "litres": "Литрес", "wb": "Wildberries", "other": ""}},d=document,dlg=d.getElementById('rv-dlg');if(!dlg)return;
+var f=dlg.querySelector('form'),done=dlg.querySelector('.done'),send=d.getElementById('rv-send'),hint=d.getElementById('rv-hint'),terms=d.getElementById('rv-terms'),
+msg=d.getElementById('rv-msg'),nm=d.getElementById('rv-name'),tx=d.getElementById('rv-text'),pv=d.getElementById('rv-priv'),opened=0,rating=0;
+function mask(n){n=(n||'').replace(/\s+/g,' ').trim();var a=Array.from(n);if(!a.length)return '';if(a.length<=2)return a[0]+'*';return a[0]+'*'.repeat(a.length-2)+a[a.length-1];}
+function err(k,on){var e=f.querySelector('[data-e="'+k+'"]');if(e)e.hidden=!on;}
+function sync(){send.disabled=!terms.checked;hint.hidden=terms.checked;}
+terms.addEventListener('change',sync);
+nm.addEventListener('input',function(){var m=mask(nm.value),s=d.getElementById('rv-shown');s.hidden=!m;s.querySelector('b').textContent=m;err('name',0);});
+function cnt(el,id){d.getElementById(id).textContent=Array.from(el.value).length;}
+tx.addEventListener('input',function(){cnt(tx,'rv-n');err('text',0);});pv.addEventListener('input',function(){cnt(pv,'rv-pn');err('private',0);});
+f.querySelectorAll('input[name=product]').forEach(function(r){r.addEventListener('change',function(){err('product',0);});});
+var sb=f.querySelectorAll('.stars button');sb.forEach(function(b){b.addEventListener('click',function(){var v=+b.getAttribute('data-v');rating=(rating===v)?0:v;sb.forEach(function(x){x.classList.toggle('on',+x.getAttribute('data-v')<=rating);});});});
+function last(){try{return +localStorage.getItem('lyd-rv-last')||0;}catch(e){return 0;}}
+function open(){if(Date.now()-last()<864e5){f.hidden=true;done.hidden=false;done.querySelector('p:nth-child(2)').textContent=T.e_day;}
+ opened=Date.now();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');}
+d.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-rv-open]')){e.preventDefault();open();}
+ if(e.target.closest&&e.target.closest('#rv-dlg [data-close]'))dlg.close();});
+f.addEventListener('submit',function(e){e.preventDefault();if(!terms.checked)return;msg.hidden=true;
+ var name=nm.value.trim(),pr=f.querySelector('input[name=product]:checked'),ch=f.querySelector('input[name=channel]:checked'),t=tx.value.trim(),p=pv.value.trim(),ok=true;
+ if(!name){err('name',1);ok=false;} if(!pr){err('product',1);ok=false;}
+ var tl=Array.from(t).length;if(tl<50||tl>1000){err('text',1);ok=false;} if(Array.from(p).length>1500){err('private',1);ok=false;}
+ if(!ok)return;send.disabled=true;
+ fetch(API+'?a=review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lang:L,name:name,product:pr.value,channel:ch?ch.value:'',rating:rating?String(rating):'',
+  text:t,'private':p,terms:'1',terms_ver:"2026-11-24",website:f.website.value,ms:String(Date.now()-opened)})})
+ .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {s:r.status,j:j};});})
+ .then(function(x){if(x.j&&x.j.ok){try{localStorage.setItem('lyd-rv-last',String(Date.now()));}catch(e){}f.reset();rating=0;d.getElementById('rv-n').textContent='0';d.getElementById('rv-pn').textContent='0';d.getElementById('rv-shown').hidden=true;sb.forEach(function(b){b.classList.remove('on');});f.hidden=true;done.hidden=false;return;}
+  var c=x.j&&x.j.error;if(c==='busy'){msg.textContent=T.e_busy;}else if(c==='text'){err('text',1);msg.textContent='';}else if(c==='name'){err('name',1);msg.textContent='';}else{msg.textContent=T.e_net;}msg.hidden=!msg.textContent;sync();})
+ .catch(function(){msg.textContent=T.e_net;msg.hidden=false;sync();});});
+// опубликованные отзывы
+var list=d.getElementById('rv-list'),rl=d.getElementById('rv-rating');if(!list)return;
+function pl(n,f){var a=n%10,b=n%100;if(L!=='ru')return n===1?f[0]:f[1];return (a===1&&b!==11)?f[0]:(a>=2&&a<=4&&(b<12||b>14))?f[1]:f[2];}
+fetch(API+'?a=reviews&lang='+L).then(function(r){return r.json();}).then(function(j){var items=j.items||[];
+ items.forEach(function(it){var fg=d.createElement('figure');fg.className='rv-card';fg.setAttribute('role','listitem');
+  var st=d.createElement('p');if(it.rating){st.className='st';st.textContent='★'.repeat(it.rating)+'☆'.repeat(5-it.rating);st.setAttribute('aria-label',it.rating+'/5');}else{st.className='nr';st.textContent=T.no_rating;}
+  var q=d.createElement('blockquote');q.textContent='«'+it.text+'»';var c=d.createElement('figcaption');var dt=(it.date||'').split('-');
+  var parts=[it.name,T.prod[it.product]||'',T.chan[it.channel]||'',dt.length===2?T.months[+dt[1]-1]+' '+dt[0]:''].filter(Boolean);c.textContent=parts.join(' · ');
+  fg.appendChild(st);fg.appendChild(q);fg.appendChild(c);list.insertBefore(fg,list.querySelector('[data-rv-anchor]'));});
+ if(items.length){list.style.scrollSnapType='none';list.scrollLeft=0;setTimeout(function(){list.scrollLeft=0;list.style.scrollSnapType='';},50);}
+ var e=d.getElementById('rv-empty');if(e)e.hidden=items.length>0;if(list.hasAttribute('data-rv-sub'))list.hidden=!items.length;
+ var R=j.rating||{};if(rl&&R.avg&&R.ratings){rl.hidden=false;rl.querySelector('[data-rv-txt]').textContent=String(R.avg.toFixed(1)).replace('.',T.dec)+' · '+R.ratings+' '+pl(R.ratings,T.pl[0])+' · '+R.reviews+' '+pl(R.reviews,T.pl[1])+(R.sources&&R.sources.length?' · '+R.sources.join(', '):'');}
+}).catch(function(){});})();
+</script>
 </body>
 </html>
