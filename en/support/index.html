@@ -40,7 +40,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <h1>Support the author</h1>
 <p>If the book has been useful to you, you can support my creative work. Your support helps me create new author projects, including developing the Lead your Dream™ app and recording the audio version of the book.</p>
 <p role="note" style="margin: 0; background: #FFF7E0; border: 1.5px solid #C9A227; border-radius: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; color: #03054F"><strong>VOLUNTARY GIFT — NOT A PURCHASE.</strong> No book, audiobook, application access, or other product is provided in return.</p>
-<div class="row"><a class="btn amt" href="https://functions.yandexcloud.net/d4esb9892ikimd216718?a=donate&amp;amount=100&amp;lang=en" data-umami-event="donate" data-umami-event-amount="100" data-umami-event-lang="en">100 ₽</a><a class="btn amt" href="https://functions.yandexcloud.net/d4esb9892ikimd216718?a=donate&amp;amount=200&amp;lang=en" data-umami-event="donate" data-umami-event-amount="200" data-umami-event-lang="en">200 ₽</a><a class="btn amt" href="https://functions.yandexcloud.net/d4esb9892ikimd216718?a=donate&amp;amount=500&amp;lang=en" data-umami-event="donate" data-umami-event-amount="500" data-umami-event-lang="en">500 ₽</a></div>
+<div class="row"><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="100" data-umami-event-lang="en">100 ₽</a><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="200" data-umami-event-lang="en">200 ₽</a><a class="btn amt" href="#" data-soon data-umami-event="donate" data-umami-event-amount="500" data-umami-event-lang="en">500 ₽</a></div>
 <p class="small" style="margin-top:-4px">100 ₽ ≈ $1.20 · 200 ₽ ≈ $2.40 · 500 ₽ ≈ $6 · 3,000 ₽ ≈ $36. Dollar amounts are estimates; your bank’s exchange rate applies.</p>
 <form id="own" class="row" novalidate style="align-items:center">
 <label for="own-sum" class="small" style="flex-basis:100%">Your own amount — from 100 to 3,000 ₽, whole number</label>
@@ -52,7 +52,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <p class="small">By making a contribution, you accept the <a href="/en/support-terms/" target="_blank" style="color:#03054F;font-weight:500">Terms of Voluntary Support for the Author</a>. Contributions are processed by Robokassa, a Russian payment service, in Russian rubles (RUB). Cards issued outside Russia may be supported, but acceptance of a particular card is not guaranteed.</p>
 </div>
 </main>
-<footer><p><a href="/en/offer/">Public Offer</a> · <a href="/en/support-terms/">Terms of Voluntary Support</a> · <a href="/en/privacy/">Personal Data Processing Policy</a> · <a href="/en/delivery-refunds/">Delivery and Refunds</a> · <a href="/en/restore-access/">Restore Access</a> · <a href="#" data-cookies>Cookie settings</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/en/offer/">Public Offer</a> · <a href="/en/support-terms/">Terms of Voluntary Support</a> · <a href="/en/privacy/">Personal Data Processing Policy</a> · <a href="/en/delivery-refunds/">Delivery and Refunds</a> · <a href="#" data-cookies>Cookie settings</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -92,6 +92,10 @@ if(!/^[0-9]+$/.test(v)||+v<100||+v>3000){er.hidden=false;i.focus();return;}er.hi
 var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";if(API){location.href=API+'?a=donate&amount='+v+'&lang='+(document.documentElement.lang||'ru');return;}
 var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});
 i.addEventListener('input',function(){er.hidden=true;});})();
+</script>
+<script>
+(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#buy"],a[data-soon]');if(!a)return;e.preventDefault();
+var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});})();
 </script>
 </body>
 </html>
