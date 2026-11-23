@@ -48,11 +48,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <button class="btn out" type="submit" data-umami-event="donate" data-umami-event-amount="free" data-umami-event-lang="es">Apoyar</button>
 <p id="own-err" hidden class="small" role="alert" style="flex-basis:100%;color:#8A2D3B;margin:0">Introduzca una cantidad de 100 a 3000 ₽ sin céntimos.</p>
 </form>
-<p id="soon" hidden class="note">El pago en línea se está conectando: el apoyo se abrirá en los próximos días. ¡Gracias por querer ayudar!</p>
+<p id="soon" hidden class="note">El apoyo al autor estará disponible pronto. ¡Gracias por querer apoyar!</p>
 <p class="small">Al realizar una contribución, acepta las <a href="/es/condiciones-apoyo/" target="_blank" style="color:#03054F;font-weight:500">Condiciones de apoyo voluntario a la autora</a>. Los pagos se procesan mediante Robokassa, un servicio de pagos ruso, en rublos rusos (RUB). Pueden admitirse tarjetas emitidas fuera de Rusia, pero no se garantiza la aceptación de una tarjeta concreta.</p>
 </div>
 </main>
-<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="/es/recuperar-acceso/">Recuperar acceso</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -89,7 +89,7 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 (function(){var f=document.getElementById('own'),i=document.getElementById('own-sum'),er=document.getElementById('own-err');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var v=(i.value||'').trim();
 if(!/^[0-9]+$/.test(v)||+v<100||+v>3000){er.hidden=false;i.focus();return;}er.hidden=true;
-var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";if(API){location.href=API+'?a=donate&amount='+v+'&lang='+(document.documentElement.lang||'ru');return;}
+var API="";if(API){location.href=API+'?a=donate&amount='+v+'&lang='+(document.documentElement.lang||'ru');return;}
 var n=document.getElementById('soon');if(n){n.hidden=false;try{n.scrollIntoView({block:'nearest',behavior:'smooth'});}catch(x){}}});
 i.addEventListener('input',function(){er.hidden=true;});})();
 </script>
