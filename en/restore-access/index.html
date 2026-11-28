@@ -47,10 +47,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <div><button class="btn" type="submit">Send links</button></div>
 <p class="muted" id="rf-msg" role="status"></p>
 </form>
-<p class="small">File does not open or is damaged? Email <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a> with the subject “E-book problem — order no. …”. We reply within 2 business days.</p>
+<p class="small">File does not open or is damaged? Email <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a> with the subject “E-book problem — order no. …”. We reply within 2 business days.</p>
 </div>
 </main>
-<footer><p><a href="/en/offer/">Public Offer</a> · <a href="/en/support-terms/">Terms of Voluntary Support</a> · <a href="/en/privacy/">Personal Data Processing Policy</a> · <a href="/en/delivery-refunds/">Delivery and Refunds</a> · <a href="/en/restore-access/">Restore Access</a> · <a href="#" data-cookies>Cookie settings</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/en/support-terms/">Terms of Voluntary Support</a> · <a href="/en/privacy/">Personal Data Processing Policy</a> · <a href="/en/review-terms/">Review Publication Terms</a> · <a href="#" data-cookies>Cookie settings</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -86,11 +86,11 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 <script>
 (function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var f=document.getElementById('rf'),m=document.getElementById('rf-msg');
 f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
- if(!API){m.textContent="The service will be available soon. Meanwhile, please email contact@leadyourdream.net.";return;}
+ if(!API){m.textContent="The service will be available soon. Meanwhile, please email leadyourdream@yandex.ru.";return;}
  m.textContent="Sending\u2026";
  fetch(API+'?a=restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order'),lang:"en"})})
  .then(function(){m.textContent="If the order is found, an email with links will arrive within a few minutes. Please check your Spam folder.";})
- .catch(function(){m.textContent="Could not send. Please try again later or email contact@leadyourdream.net.";});});})();
+ .catch(function(){m.textContent="Could not send. Please try again later or email leadyourdream@yandex.ru.";});});})();
 </script>
 </body>
 </html>

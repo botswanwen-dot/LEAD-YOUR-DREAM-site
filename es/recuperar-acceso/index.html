@@ -47,10 +47,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <div><button class="btn" type="submit">Enviar enlaces</button></div>
 <p class="muted" id="rf-msg" role="status"></p>
 </form>
-<p class="small">¿El archivo no se abre o está dañado? Escriba a <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a> con el asunto «Problema con el libro electrónico — pedido n.º …». Respondemos en 2 días hábiles.</p>
+<p class="small">¿El archivo no se abre o está dañado? Escriba a <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a> con el asunto «Problema con el libro electrónico — pedido n.º …». Respondemos en 2 días hábiles.</p>
 </div>
 </main>
-<footer><p><a href="/es/oferta/">Oferta pública</a> · <a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/entrega-devoluciones/">Entrega y devoluciones</a> · <a href="/es/recuperar-acceso/">Recuperar acceso</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/es/condiciones-apoyo/">Condiciones de apoyo voluntario</a> · <a href="/es/privacy/">Política de tratamiento de datos personales</a> · <a href="/es/condiciones-resenas/">Condiciones de publicación de reseñas</a> · <a href="#" data-cookies>Configuración de cookies</a></p><p>IP Naumova Anna Viktorovna · INN 526211255510 · OGRNIP 319774600050838 · <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -86,11 +86,11 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 <script>
 (function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var f=document.getElementById('rf'),m=document.getElementById('rf-msg');
 f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
- if(!API){m.textContent="El servicio estar\u00e1 disponible pronto. Mientras tanto, escriba a contact@leadyourdream.net.";return;}
+ if(!API){m.textContent="El servicio estar\u00e1 disponible pronto. Mientras tanto, escriba a leadyourdream@yandex.ru.";return;}
  m.textContent="Enviando\u2026";
  fetch(API+'?a=restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order'),lang:"es"})})
  .then(function(){m.textContent="Si se encuentra el pedido, el correo con los enlaces llegar\u00e1 en unos minutos. Revise la carpeta de spam.";})
- .catch(function(){m.textContent="No se pudo enviar. Int\u00e9ntelo m\u00e1s tarde o escriba a contact@leadyourdream.net.";});});})();
+ .catch(function(){m.textContent="No se pudo enviar. Int\u00e9ntelo m\u00e1s tarde o escriba a leadyourdream@yandex.ru.";});});})();
 </script>
 </body>
 </html>

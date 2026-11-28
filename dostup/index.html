@@ -47,10 +47,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #03054F;outline-offset:3p
 <div><button class="btn" type="submit">Отправить ссылки</button></div>
 <p class="muted" id="rf-msg" role="status"></p>
 </form>
-<p class="small">Файл не открывается или повреждён? Напишите на <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a> с темой «Проблема с электронной книгой — заказ № …». Ответим в течение 2 рабочих дней.</p>
+<p class="small">Файл не открывается или повреждён? Напишите на <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a> с темой «Проблема с электронной книгой — заказ № …». Ответим в течение 2 рабочих дней.</p>
 </div>
 </main>
-<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="/usloviya-podderzhki/">Условия поддержки автора</a> · <a href="/dostup/">Восстановить доступ</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:contact@leadyourdream.net">contact@leadyourdream.net</a></p></footer>
+<footer><p><a href="/oferta/">Публичная оферта</a> · <a href="/privacy/">Политика обработки персональных данных</a> · <a href="/vozvrat/">Получение и возврат</a> · <a href="/usloviya-podderzhki/">Условия поддержки автора</a> · <a href="/dostup/">Восстановить доступ</a> · <a href="#" data-cookies>Настройки cookies</a></p><p>ИП Наумова Анна Викторовна · ИНН 526211255510 · ОГРНИП 319774600050838 · г. Москва · <a href="mailto:leadyourdream@yandex.ru">leadyourdream@yandex.ru</a></p></footer>
 <style>
 #ck{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;background:#FBF8F3;color:#03054F;border:1px solid #D6CDBF;border-radius:18px;box-shadow:0 12px 32px rgba(3,5,79,.18);padding:18px 20px;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:12px}
 #ck[hidden]{display:none}
@@ -86,11 +86,11 @@ document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListen
 <script>
 (function(){var API="https://functions.yandexcloud.net/d4esb9892ikimd216718";var f=document.getElementById('rf'),m=document.getElementById('rf-msg');
 f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f);
- if(!API){m.textContent='Сервис скоро заработает. Пока напишите нам на contact@leadyourdream.net.';return;}
+ if(!API){m.textContent='Сервис скоро заработает. Пока напишите нам на leadyourdream@yandex.ru.';return;}
  m.textContent='Отправляем…';
  fetch(API+'?a=restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:fd.get('email'),order:fd.get('order')})})
  .then(function(){m.textContent='Если заказ найден, письмо со ссылками придёт в течение нескольких минут. Проверьте папку «Спам».';})
- .catch(function(){m.textContent='Не получилось отправить. Попробуйте позже или напишите на contact@leadyourdream.net.';});});})();
+ .catch(function(){m.textContent='Не получилось отправить. Попробуйте позже или напишите на leadyourdream@yandex.ru.';});});})();
 </script>
 </body>
 </html>
